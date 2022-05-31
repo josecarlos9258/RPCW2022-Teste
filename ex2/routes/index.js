@@ -11,7 +11,7 @@ var token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyOTRlY2VhNmI1ZDVjMj
 router.get('/classes', function (req, res) {
   axios.get('http://clav-api.di.uminho.pt/v2/classes?nivel=1&token=' + token)
     .then(dados => {
-      res.render('index', { classes1: dados.data })
+      var classes = dados.data;
     })
     .catch((err) => {
       res.render("error", { error: err });
@@ -22,10 +22,10 @@ router.get('/classes', function (req, res) {
 // Transformação dos códigos de classes em links:
 router.get('/termos', function (req, res) {
   console.log(req.params.id)
-  axios.get('http://clav-api.di.uminho.pt/v2/classes/' + "c" + req.params.id + '?token=' + token)
+  axios.get('http://clav-api.di.uminho.pt/v2/termosIndice/' + '?token=' + token)
     .then(dados => {
 
-      res.render('class', { c: dados.data })
+      res.render('termos', { termos: dados.data })
     })
     .catch((err) => {
       res.render("error", { error: err });
