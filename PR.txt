@@ -8,15 +8,44 @@ Email do Aluno: pg47355@alunos.uminho.pt
 
 
 
+-> Para o exerício 1:
+
+# Quanto à validade do JSON, este já era válido e, então, não foi necessário corrigir o mesmo;
+
+# De modo a facilitar a manipulação da Base de dados, decidi dividir o dataset em duas coleções: cidades e ligações.
+
+# De seguida, para importar para a BD, foi usado, para cada um dos ficheiros,o seguinte comando:
+
+		$ mongoimport --db MAPA2022 --collection "nomecolec"--file .\"nomefile".json --jsonArray
+
+# Por fim, e de forma a responder ao que era pedido, foram manipulados os componentes da nossa aplicação como, por exemplo, controladores e modelos.
+
+
+
+
+-> Para o exercício 2:
+
 
 
 Quanto ao aquecimento, no exercicío 2, realizei as 3 primeiras alíneas, com as seguintes respostas:
 
-1) 18
+NOTA: os ficheiros JSON usados para a resolução das alíneas seguintes também se encontram no repositório. Além disso, e de forma a tornar
+o processo mais eficiente, cada alínea tem associada a si uma script.
 
-2) 1069
+Alínea 0) Para obter token de autorização, foi utilizada a rota, através de um pedido para "http://clav-api.di.uminho.pt/v2/users/login"
 
-3) 7
+Alínea 1) teve o resultado: 18
+	  e foi obtido com GET na rota: "http://clav-api.di.uminho.pt/v2/classes?nivel=3&token="
+
+Alínea 2) teve o resultado: 1069
+	  e foi obtido com GET na rota: " http://clav-api.di.uminho.pt/v2/classes?estrutura=lista&token="
+
+Alínea 3) teve o resultado: 7
+	  e foi obtido com GET na rota: " http://clav-api.di.uminho.pt/v2/classes/c750.20/descendencia?token="
+
+
+
+Quanto à segunda parte do exercício, não tive tempo de concluir as views...
 
 
 
